@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Provinsi">
+        <item>European</item>
+        <item>Americas</item>
+        <item>China</item>
+        <item>South East Asia</item>
+    </string-array>
+</resources>
