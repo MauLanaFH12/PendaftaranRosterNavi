@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 doClick();
-                doProcess();
+
             }
 
         });
@@ -53,16 +53,24 @@ public class MainActivity extends AppCompatActivity {
                 doClick();
                 doClick2();
                 doClick3();
+                proses();
             }
         });
     }
 
-    private void doProcess() {
-        if (isTrue()) {
-            String name = etName.getText().toString();
-            tvViewT.setText(name + ", ");
+    private void proses() {
+        // boolean valid = true;
+        String name = etName.getText().toString();
+        tvViewT.setText("Your Name :" + name);
 
-        }
+        // if (name.isEmpty()) {
+        //   etName.setError("You Should Insert Your Names !");
+        // valid = false;
+        //} else if (name.length() < 4) {
+        //  etName.setError("Your Name Must Be at Least 4 Characters");
+        // valid = false;}
+
+        //return valid;
     }
 
 
@@ -79,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
         if (cbS4.isChecked()) hasilC += cbS4.getText() + "\n";
         if (cbS5.isChecked()) hasilC += cbS5.getText() + "\n";
         if (tvView.length() == startlen) hasilC += "No Role Picked!";
-        tvViewC.setText("" + hasilC.toString());
+        tvViewC.setText("" + hasilC);
     }
 
     private void doClick3() {
@@ -99,23 +107,7 @@ public class MainActivity extends AppCompatActivity {
         if (tvViewR == null) {
             tvViewR.setText("You must choose your Games !");
         } else {
-            tvViewR.setText("Your Role : " + hasilR);
+            tvViewR.setText("Your Games : " + hasilR);
         }
-    }
-
-    private boolean isTrue() {
-        boolean valid = true;
-        String name = etName.getText().toString();
-
-        if (name.isEmpty()) {
-            etName.setError("You Should Insert Your Names !");
-            valid = false;
-        } else if (name.length() < 4) {
-            etName.setError("Your Name Must Be at Least 4 Characters");
-            valid = false;
-        } else {
-            etName.setError(null);
-        }
-        return valid;
     }
 }
